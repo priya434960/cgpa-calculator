@@ -7,22 +7,22 @@
 </head>
 <body>
 
+  <!-- Dark Mode Toggle -->
+  <button class="toggle" onclick="toggleMode()">🌙</button>
+
   <!-- Background Animation -->
   <div class="bubbles">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span><span></span><span></span>
   </div>
 
-  <!-- Main Container -->
   <div class="container">
     <h1>🎓 CGPA Calculator</h1>
 
-    <input type="number" id="marks" placeholder="Enter your percentage">
-    
+    <div id="subjects"></div>
+
+    <button onclick="addSubject()">+ Add Subject</button>
     <button onclick="calculate()">Calculate</button>
+    <button onclick="resetAll()">Reset</button>
 
     <h2 id="result"></h2>
   </div>

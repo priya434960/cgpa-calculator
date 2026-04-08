@@ -7,67 +7,91 @@ body {
   align-items: center;
   background: linear-gradient(135deg, #667eea, #764ba2);
   font-family: Arial, sans-serif;
+  transition: 0.3s;
 }
 
-/* Container */
+/* Dark Mode */
+.dark {
+  background: #121212;
+  color: white;
+}
+
 .container {
-  background: white;
-  padding: 30px;
+  background: rgba(255,255,255,0.9);
+  padding: 25px;
   border-radius: 15px;
   text-align: center;
-  width: 300px;
+  width: 320px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   z-index: 1;
+  transition: 0.3s;
 }
 
-h1 {
-  margin-bottom: 20px;
+.dark .container {
+  background: rgba(30,30,30,0.9);
 }
 
 input {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 15px;
+  width: 40%;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 8px;
 }
 
 button {
-  padding: 10px 20px;
-  background: #667eea;
-  color: white;
+  margin: 5px;
+  padding: 10px;
   border: none;
   border-radius: 8px;
+  background: #667eea;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
+  transform: scale(1.1);
   background: #5a67d8;
-  transform: scale(1.05);
 }
 
+/* Toggle Button */
+.toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+}
+
+/* Result Animation */
 #result {
   margin-top: 15px;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Bubbles Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bubbles */
 .bubbles span {
   position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background: rgba(255,255,255,0.3);
   border-radius: 50%;
   animation: float 10s linear infinite;
   bottom: -50px;
 }
 
-.bubbles span:nth-child(1) { left: 10%; animation-duration: 8s; }
-.bubbles span:nth-child(2) { left: 30%; animation-duration: 12s; }
-.bubbles span:nth-child(3) { left: 50%; animation-duration: 10s; }
-.bubbles span:nth-child(4) { left: 70%; animation-duration: 14s; }
-.bubbles span:nth-child(5) { left: 90%; animation-duration: 9s; }
+.bubbles span:nth-child(1){ left:10%; animation-duration:8s;}
+.bubbles span:nth-child(2){ left:30%; animation-duration:12s;}
+.bubbles span:nth-child(3){ left:50%; animation-duration:10s;}
+.bubbles span:nth-child(4){ left:70%; animation-duration:14s;}
+.bubbles span:nth-child(5){ left:90%; animation-duration:9s;}
 
 @keyframes float {
   0% { transform: translateY(0); }
