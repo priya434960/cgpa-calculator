@@ -1,6 +1,7 @@
 body {
   margin: 0;
   height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +9,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Container */
 .container {
   background: white;
   padding: 30px;
@@ -15,6 +17,7 @@ body {
   text-align: center;
   width: 300px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 h1 {
@@ -36,12 +39,37 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
   background: #5a67d8;
+  transform: scale(1.05);
 }
 
 #result {
   margin-top: 15px;
+}
+
+/* Bubbles Animation */
+.bubbles span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  animation: float 10s linear infinite;
+  bottom: -50px;
+}
+
+.bubbles span:nth-child(1) { left: 10%; animation-duration: 8s; }
+.bubbles span:nth-child(2) { left: 30%; animation-duration: 12s; }
+.bubbles span:nth-child(3) { left: 50%; animation-duration: 10s; }
+.bubbles span:nth-child(4) { left: 70%; animation-duration: 14s; }
+.bubbles span:nth-child(5) { left: 90%; animation-duration: 9s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
 }
